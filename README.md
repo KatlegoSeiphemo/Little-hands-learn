@@ -2,7 +2,7 @@
 
 # Little Hands Learn – Sign Language for Kids
 
-This is a landing page project created as part of the FNB App Academy practical tasks. The page promotes the importance of teaching sign language to young children in an engaging and informative way.
+This is a landing page project created as part of the SheCodes practical tasks. The page promotes the importance of teaching sign language to young children in an engaging and informative way.
 
 ## 📌 Project Overview
 
