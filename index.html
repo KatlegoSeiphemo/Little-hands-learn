@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Little Hands Learn – Sign Language for Kids</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to right, #e0f7fa, #fff);
+      line-height: 1.6;
+      color: #333;
+    }
+
+    header {
+      background: linear-gradient(to right, #00838f, #00acc1);
+      color: white;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+      font-size: 2.5em;
+      margin: 0;
+    }
+
+    h2 {
+      font-size: 1.5em;
+      margin-top: 20px;
+    }
+
+    p {
+      padding: 0 20px;
+    }
+
+    .highlight {
+      background-color: #ffe0b2;
+      border: 1px solid #ffa726;
+      padding: 10px;
+      margin: 20px;
+      box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .container {
+      padding: 20px;
+    }
+
+    img {
+      max-width: 100%;
+      border-radius: 10px;
+    }
+
+    button {
+      margin: 20px 10px 0 0;
+      padding: 10px 20px;
+      font-size: 1em;
+      background-color: #00acc1;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #007c91;
+    }
+
+    a {
+      color: #007c91;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    hr {
+      margin: 30px 0;
+      border: 0;
+      border-top: 2px solid #ccc;
+    }
+
+    .slideshow-container {
+      max-width: 600px;
+      margin: auto;
+      position: relative;
+      text-align: center;
+    }
+
+    .slide {
+      display: none;
+    }
+
+    .slide img {
+      width: 100%;
+      height: auto;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      border: 3px solid #00acc1;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Little Hands Learn</h1>
+    <p><em>Empowering kids to communicate through sign language 🤟</em></p>
+  </header>
+
+  <div class="container">
+    <h2>Why Teach Sign Language Early?</h2>
+    <p>
+      Teaching children sign language helps them express themselves before they can speak.
+      It's especially helpful for <strong>inclusive communication</strong> and early learning.
+    </p>
+
+    <div class="highlight">
+      <p><strong>Did you know?</strong> Babies as young as 6 months can learn basic signs like <em>“milk”</em>, <em>“more”</em>, and <em>“all done”</em>!</p>
+    </div>
+
+    <h2>Gallery: Kids Learning Sign Language</h2>
+    <div class="slideshow-container">
+      <div class="slide"><img src="https://images.unsplash.com/photo-1617688915130-08c94888b9b2?fit=crop&w=800&q=80" alt="Child signing 1"></div>
+      <div class="slide"><img src="https://images.unsplash.com/photo-1526679493562-2e0c7e8ea8c3?fit=crop&w=800&q=80" alt="Child signing 2"></div>
+      <div class="slide"><img src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?fit=crop&w=800&q=80" alt="Child signing 3"></div>
+      <button onclick="prevSlide()">⏮ Prev</button>
+      <button onclick="nextSlide()">Next ⏭</button>
+    </div>
+
+    <hr>
+
+    <h2>Try It Yourself!</h2>
+    <p>Click the button below to try a mini interaction 🧠</p>
+
+    <button onclick="startSignQuiz()">Start Quiz</button>
+
+    <p><a href="https://www.babysignlanguage.com/" target="_blank">Learn more on BabySignLanguage.com</a></p>
+  </div>
+
+  <script>
+    // JavaScript Quiz
+    function startSignQuiz() {
+      let answer = prompt("What does the ASL sign for 'A' look like? \nA) Thumb on side, fingers closed \nB) Two fingers up \nC) All fingers spread");
+
+      if (answer.toUpperCase() === 'A') {
+        alert("✅ Correct! You're learning already!");
+      } else {
+        alert("❌ Oops! The correct answer is A. Keep practicing!");
+      }
+    }
+
+    // Slideshow Logic
+    let slideIndex = 0;
+    const slides = document.getElementsByClassName("slide");
+
+    function showSlide(index) {
+      for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      slides[index].style.display = "block";
+    }
+
+    function nextSlide() {
+      slideIndex = (slideIndex + 1) % slides.length;
+      showSlide(slideIndex);
+    }
+
+    function prevSlide() {
+      slideIndex = (slideIndex - 1 + slides.length) % slides.length;
+      showSlide(slideIndex);
+    }
+
+    function autoSlide() {
+      nextSlide();
+      setTimeout(autoSlide, 4000); // 4 seconds per slide
+    }
+
+    // Initialize slideshow
+    showSlide(slideIndex);
+    autoSlide();
+  </script>
+
+</body>
+</html>
